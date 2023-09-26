@@ -1,0 +1,19 @@
+package org.cibertec.edu.pe.modelo;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+
+@Entity
+@Table(name="empleado")
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Empleado {
+	private int idEmpleado;
+	private String Apellidos;
+	private String Nombres;
+	private int Edad;
+	private int Sexo;
+	private double Salario;
+	
+}

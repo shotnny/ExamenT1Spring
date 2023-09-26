@@ -1,0 +1,26 @@
+package org.cibertec.edu.pe.controller;
+
+import java.util.List;
+
+import org.cibertec.edu.pe.interfaceService.IEmpleadosService;
+import org.cibertec.edu.pe.modelo.Empleado;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class EmpleadoController {
+	
+	@Autowired
+	private IEmpleadosService servicio;
+	
+	@GetMapping("/Listar")
+	public String Listar(Model m) {
+		
+		List<Empleado> LEmpleado = servicio.Listar();
+		m.addAttribute("ListaEmp", LEmpleado);
+		return "index";
+	}
+	
+}

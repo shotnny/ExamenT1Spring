@@ -1,0 +1,25 @@
+use cibertec2023
+
+drop table if exists empleado
+
+create table empleado(
+	IdEmpleado int AUTO_INCREMENT not null primary key,
+    Apellidos varchar(60) not null,
+    Nombres varchar(60) not null,
+    Edad int not null,
+    Sexo char(1) not null,
+    Salario decimal not null,
+    check(Edad >=18),
+    check(sexo in ('M','F')),
+    check(Salario >= 1500 AND Salario <= 2500)
+);
+
+INSERT INTO Empleado (IdEmpleado, Apellidos, Nombres, Edad, Sexo, Salario)
+VALUES
+    (1, 'TORRES', 'JOSE', 22, 'M', 1500),
+    (2, 'GARCIA', 'MARIA', 21, 'F', 1750),
+    (3, 'FLORES', 'JUAN', 22, 'M', 1850),
+	(4, 'CAHUANA', 'JHONNY', 18, 'M', 1950),
+    (5, 'CASAS', 'ANA', 23, 'F', 2000);
+
+SELECT * FROM Empleado;

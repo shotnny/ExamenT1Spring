@@ -1,0 +1,10 @@
+package org.cibertec.edu.pe.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class EmpleadoController {
+	@Autowired
+	private IEmpleadosService servicio;
+}
